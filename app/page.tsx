@@ -1,5 +1,36 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import React from 'react';
 
+// Define the props for the FeatureCard component
+interface FeatureCardProps {
+  link: string;
+  title: string;
+  description: string;
+}
+
+// FeatureCard component definition
+function FeatureCard({ link, title, description }: FeatureCardProps) {
+  return (
+    <a
+      href={link}
+      className="group rounded-lg border border-gray-500 px-6 py-5 transition-all hover:border-blue-500 hover:bg-gray-800"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <h3 className="mb-3 text-2xl font-semibold">
+        {title}
+        <span className="inline-block transition-transform group-hover:translate-x-1">
+          →
+        </span>
+      </h3>
+      <p className="m-0 text-sm">
+        {description}
+      </p>
+    </a>
+  );
+}
+
+// Home page component
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-br from-indigo-900 to-black text-white">
@@ -29,42 +60,21 @@ export default function Home() {
           description="Delve into advanced AI analytics for deep psychological understanding."
         />
         <FeatureCard
-          link="cognitive-analysis"
+          link="/cognitive-analysis"
           title="Cognitive Analysis"
           description="Explore the intricacies of your cognitive processes with our tailored AI solutions."
         />
         <FeatureCard
-          link="personalized-therapy"
+          link="/personalized-therapy"
           title="Personalized AI Therapy"
           description="Engage in personalized therapeutic sessions guided by AI for profound mental well-being."
         />
         <FeatureCard
-          link="interactive-learning"
+          link="/interactive-learning"
           title="Interactive Learning"
           description="Learn and grow with our AI-driven interactive psychological courses."
         />
       </section>
     </main>
-  )
-}
-
-function FeatureCard({ link, title, description }) {
-  return (
-    <a
-      href={link}
-      className="group rounded-lg border border-gray-500 px-6 py-5 transition-all hover:border-blue-500 hover:bg-gray-800"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <h3 className="mb-3 text-2xl font-semibold">
-        {title}
-        <span className="inline-block transition-transform group-hover:translate-x-1">
-          →
-        </span>
-      </h3>
-      <p className="m-0 text-sm">
-        {description}
-      </p>
-    </a>
-  )
+  );
 }
