@@ -5,7 +5,7 @@ Cython==3.0.2
 dl==0.1.0
 docutils==0.18.1
 docutils==0.18.1
-fastapi==0.103.1
+fastapi==0.109.1
 Flask==2.3.3
 Flask_Bcrypt==1.0.1
 flask_caching==2.0.2
